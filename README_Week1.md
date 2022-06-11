@@ -1,14 +1,19 @@
 
 
 /* how many users do we have */
+
+```
 select count(distinct user_id) 
 from dbt.dbt_javier_r.stg_greenery_users;
-
+```
+```
 count
 130
-
+```
 
 /* On average, how many orders do we receive per hour? */
+
+
 select avg(q.conteo) as prom_ordenes_por_hora
 from 
   ( 
@@ -20,12 +25,15 @@ from
   ) as q
 ;
 
+
 prom_ordenes_por_hora
 7.5208333333333333
 
 
 
 /* On average, how long does an order take from being placed to being delivered? */
+
+
 select avg(q.dias_transcurridos)
 from ( 
 select 
@@ -37,6 +45,7 @@ where delivered_at is not null
 ) q;
 
 
+
 avg
 3 days 21:24:11.803279
 
@@ -45,6 +54,8 @@ avg
 /* How many users have only made one purchase? Two purchases? Three+ purchases?
 Note: you should consider a purchase to be a single order. In other words, 
 if a user places one order for 3 products, they are considered to have made 1 purchase. */
+
+
 
 select q2.conteo_final, count(*) as conteo
 from
