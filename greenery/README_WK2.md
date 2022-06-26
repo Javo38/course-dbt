@@ -7,7 +7,7 @@ What is our user repeat rate?
 Repeat Rate = Users who purchased 2 or more times / users who purchased
 */
 
-I define de int_user_repeat_rate.sql:
+I defined the model int_user_repeat_rate.sql:
 ```
 
 {{
