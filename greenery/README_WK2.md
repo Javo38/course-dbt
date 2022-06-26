@@ -53,3 +53,47 @@ What are good indicators of a user who will likely purchase again? What about in
 NOTE: This is a hypothetical question vs. something we can analyze in our Greenery data set. Think about what exploratory analysis you would do to approach this question.
  */
 
+```
+I believe products and promos would be a good indicators of a user who will purchase again. Undestanding why they purchased twice or more, is important to create a strategy.
+
+In the other hand, those who purchased once and never purchase again, maybe we need extra data like client satisfaction of something like that.
+
+
+```
+
+/* Explain the marts models you added. Why did you organize the models in the way you did? */
+
+fact_orders.sql
+
+```
+I'd like to track the realtion beteween users, promos and orders, and to see if there is any high correlation
+```
+
+dim_products
+```
+Just to have in one table all products universe and how many orders at the same time
+```
+
+
+dim_users
+```
+I'd like to see in one table users, events and product, and to see the impact that one event has on users and their decision to order
+```
+
+
+user_order_facts
+```
+Just to se which users are the most valuable based on their order history
+```
+
+
+fact_page_views
+```
+Just to have in one view wich event has more impact on users
+```
+
+
+
+/* Use the dbt docs to visualize your model DAGs to ensure the model layers make sense */
+
+![alt text](/greenery/img/Graph1.png)
