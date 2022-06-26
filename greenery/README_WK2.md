@@ -1,5 +1,7 @@
 
 
+## Part I
+
 /* 
 What is our user repeat rate?
 Repeat Rate = Users who purchased 2 or more times / users who purchased
@@ -96,4 +98,44 @@ Just to have in one view wich event has more impact on users
 
 /* Use the dbt docs to visualize your model DAGs to ensure the model layers make sense */
 
+After I ran the commands I got:
+
 ![alt text](/greenery/img/Graph1.png)
+
+
+
+
+## Part II
+
+
+I added a not_null test on my dim_users model
+```
+version: 2
+
+models:
+  - name: dim_users
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+
+
+```
+
+and it passed successfully.
+
+
+
+/* Your stakeholders at Greenery want to understand the state of the data each day. Explain how you would ensure these tests are passing regularly and how you would alert stakeholders about bad data getting through.
+ */
+
+
+The way that I ensure everyday data is by using freshness test on my src_greenery.yml
+
+```
+
+    freshness: 
+      warn_after: {count: 24, period: hour}
+      error_after: {count: 48, period: hour}
+```
+

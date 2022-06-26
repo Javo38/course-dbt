@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: dim_users
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+
