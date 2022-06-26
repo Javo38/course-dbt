@@ -68,7 +68,7 @@ order by q2.conteo_final
 conteo_final     conteo
 1                25
 2                28
-3               71
+3                71
 
 
 
