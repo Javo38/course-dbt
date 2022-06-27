@@ -128,7 +128,7 @@ Which gives the result:
 
 ## Part II
 
-my macro (I'm really sure if it's ok)
+my macro (I'm not really sure if it's ok)
 
 ```
 {% macro agg_event_type(event_type) %}
@@ -170,4 +170,6 @@ Other packages I added: codegen, dbt_date, dbt_expectations
 
 
 ## Part V
+
+![alt text](/greenery/img/Graph2.png)
 
