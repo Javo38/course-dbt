@@ -124,3 +124,50 @@ Which gives the result:
 |Alocasia Polly|0.388888888888888|
 |Angel Wings Begonia|0.387096774193548|
 |Pothos|0.328125|
+
+
+## Part II
+
+my macro (I'm really sure if it's ok)
+
+```
+{% macro agg_event_type(event_type) %}
+    
+    {% set event_types = ["add_to_cart", "checkout", "page_view", "package_shipped"] %}
+
+    {% for event_type in event_types %}
+        (case when e.event_type = '{{event_type}}' then 1 else 0 end) type_{{event_type}}
+    {% if not loop.last %},{% endif %}
+    {% endfor %}
+
+{% endmacro %}
+```
+
+
+## Part III
+
+this is how I added:
+```
+models:
+  greenery:
+    # Config indicated by + and applies to all files under models/example/
+    example:
+      +materialized: view
+  
+  post-hook:
+    - "grant select on {{this}} to reporting"
+
+on-run-end:
+  - "grant usage on schema {{schema}} to reporting"
+```
+
+
+## Part IV
+
+I added dbt-utils for my macro fact_session, but at the end I couldn't use it. some errors showed. 
+
+Other packages I added: codegen, dbt_date, dbt_expectations
+
+
+## Part V
+

@@ -1,0 +1,11 @@
+version: 2
+
+macros:
+  - name: agg_event_type
+    description: "ggregating event types per session."
+
+    arguments:
+      - name: event_type
+        type: <string>
+
+  
