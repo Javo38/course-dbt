@@ -75,6 +75,9 @@ Result
 0.7730192719486081
 ```
 
+So, the biggest drop begins when deciding if checkout or not. That make sense.
+
+
  Exposure on your product analytics model 
 ```
 version: 2
